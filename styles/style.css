@@ -54,6 +54,7 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 /* global css */
@@ -71,12 +72,16 @@ li {
   list-style: none;
 }
 
+.title {
+  margin: 2rem;
+  font-size: 1.5rem;
+}
+
 .under-line {
   border: 2px solid var(--clr-red-light);
-  margin: 0 2rem;
+  margin: 0 3rem;
 }
 
 .filter-btn {
-  width: 100%;
-  margin-left: 3rem;
+  justify-content: space-between;
 }
