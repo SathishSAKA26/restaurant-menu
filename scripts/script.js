@@ -4,7 +4,7 @@ const menu = [
     id: 1,
     title: "Idle",
     price: 10.0,
-    category: "breakfast",
+    category: "Breakfast",
     image: "./images/breckfast-1.jpg",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -12,7 +12,7 @@ const menu = [
     id: 2,
     title: "Vada",
     price: 20.0,
-    category: "breakfast",
+    category: "Breakfast",
     image: "./images/breckfast-2.jpg",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -20,7 +20,7 @@ const menu = [
     id: 3,
     title: "Kichadi",
     price: 30.0,
-    category: "breakfast",
+    category: "Breakfast",
     image: "./images/breckfast-3.jpg",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -28,7 +28,7 @@ const menu = [
     id: 4,
     title: "Dosa",
     price: 15.0,
-    category: "breakfast",
+    category: "Breakfast",
     image: "./images/breckfast-4.jpg",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -44,7 +44,7 @@ const menu = [
     id: 6,
     title: "Kushka",
     price: 20.0,
-    category: "lunch",
+    category: "Lunch",
     image: "./images/lunchi-2.jpg",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -52,7 +52,7 @@ const menu = [
     id: 7,
     title: "Chicken Briyani",
     price: 20.0,
-    category: "lunch",
+    category: "Lunch",
     image: "./images/lunchi-1.jpg",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -60,7 +60,7 @@ const menu = [
     id: 8,
     title: "Kulipanikaaram",
     price: 50.0,
-    category: "snakes",
+    category: "Snakes",
     image: "./images/snakes.jpg",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -68,7 +68,7 @@ const menu = [
     id: 9,
     title: "Elluvada",
     price: 40.0,
-    category: "snakes",
+    category: "Snakes",
     image: "./images/snakes-1.jpg",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -76,7 +76,7 @@ const menu = [
     id: 10,
     title: "Pori urundai",
     price: 30.0,
-    category: "snakes",
+    category: "Snakes",
     image: "./images/snakes-3.jpg",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -84,7 +84,7 @@ const menu = [
     id: 11,
     title: "chicken pop",
     price: 80.0,
-    category: "dinner",
+    category: "Dinner",
     image: "./images/dinner-1.avif",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -92,7 +92,7 @@ const menu = [
     id: 12,
     title: "chicken full",
     price: 120.0,
-    category: "dinner",
+    category: "Dinner",
     image: "./images/dinner-2.avif",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -100,7 +100,7 @@ const menu = [
     id: 12,
     title: "chicken rice",
     price: 90.0,
-    category: "dinner",
+    category: "Dinner",
     image: "./images/dinner-3.avif",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -108,7 +108,7 @@ const menu = [
     id: 14,
     title: "chicken leg",
     price: 80.0,
-    category: "dinner",
+    category: "Dinner",
     image: "./images/dinner-4.avif",
     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Namexcepturi esse iure. Beatae id dignissimos. Temporibus maximedistinctio quo?",
   },
@@ -124,21 +124,21 @@ window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(menu);
 });
 
-// filter items
+// filter btn
 filterBtn.forEach(function (btn) {
-  btn.addEventListener("click", function (e) {
-    const category = e.currentTarget.dataset.id;
-    const menuCategory = menu.filter(function (menuItem) {
+  btn.addEventListener("click", function (Event) {
+    const category = Event.currentTarget.dataset.id;
+    const menuChat = menu.filter(function (menuItems) {
       // console.log(menuItem.category);
-      if (menuItem.category === category) {
-        return menuItem;
+      if (menuItems.category === category) {
+        return menuItems;
       }
     });
-    // console.log(menuCategory);
+    console.log(menuChat);
     if (category === "All") {
       displayMenuItems(menu);
     } else {
-      displayMenuItems(menuCategory);
+      displayMenuItems(menuChat);
     }
   });
 });
@@ -161,5 +161,6 @@ function displayMenuItems(menuItems) {
   </article>`;
   });
   displayMenu = displayMenu.join("");
+
   menuList.innerHTML = displayMenu;
 }
